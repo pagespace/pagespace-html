@@ -1,0 +1,40 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ECECEC;
+}
+
+/* layout */
+.main {
+    position: absolute;
+    top: 0;
+    bottom: 50px;
+    width: 100%;
+    overflow: auto;
+    padding: 1em 0;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    background: #d3d3d3;
+    padding: 10px 30px;
+}
+.footer button {
+    float: right;
+    cursor: pointer;
+}
+
+.CodeMirror {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="htmlApp">
+<head>
+    <title>HTML Editor</title>
+
+    <link rel="stylesheet" type="text/css" href="/_parts/static/pagespace-html/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/_parts/static/pagespace-html/bower_components/codemirror/lib/codemirror.css">
+    <link href="/_parts/static/pagespace-html/styles.css" type="text/css" rel="stylesheet">
+
+    <script src="/_parts/static/pagespace-html/pagespace-stub.js"></script>
+    <script src="/_parts/static/pagespace-html/bower_components/localforage/dist/localforage.min.js"></script>
+    <script src="/_parts/static/pagespace-html/bower_components/angular/angular.min.js"></script>
+    <script src="/_parts/static/pagespace-html/bower_components/codemirror/lib/codemirror.js"></script>
+    <script src="/_parts/static/pagespace-html/bower_components/codemirror/mode/xml/xml.js"></script>
+    <script src="/_parts/static/pagespace-html/bower_components/codemirror/mode/javascript/javascript.js"></script>
+    <script src="/_parts/static/pagespace-html/bower_components/angular-ui-codemirror/ui-codemirror.js"></script>
+    <script src="/_parts/static/pagespace-html/html-editor.js"></script>
+</head>
+<body ng-controller="HtmlController">
+<div  class="container-fluid ps-edit-box" >
+    <main class="main row">
+        <div class="col-sm-12">
+            <form>
+                <div class="form-group">
+                    <label for="file">File path of an HTML document</label>
+                    <input type="text" id="file" class="form-control" placeholder="./html-includes/foo.html" ng-model="data.file">
+                    <p class="help-block"><small>Paths should be absolute or relative to where Pagespace is running</small></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="url">URL of an HTML document</label>
+                    <input type="text" id="url" class="form-control" placeholder="/_media/foo.html" ng-model="data.url">
+                    <p class="help-block"><small><b>Tip:</b> Reference an HTML document uploaded as media</small></p>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="html">Directly enter HTML</label>
+                    <textarea ng-model="data.html"
+                              id="html"
+                              ui-codemirror
+                              ui-codemirror-opts="editorOpts"
+                              class="form-control"
+                              placeholder="&lt;p&gt;Hello world&lt;/p&gt;"></textarea>
+                    <p class="help-block"><small>This field has precedence over a file path and url entry.</small></p>
+                </div>
+            </form>
+        </div>
+    </main>
+</div>
+
+<footer class="footer">
+    <button ng-click="save()">Save and close</button>
+</footer>
+
+</body>
+
+</html>
