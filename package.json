@@ -1,7 +1,11 @@
 {
   "name": "pagespace-html",
   "version": "1.0.0",
-  "description": "HTNL part for Pagespace",
+  "description": "HTNL plugin for Pagespace",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pagespace/pagespace-html"
+    },
   "main": "index.js",
   "scripts": {
     "start": "node standalone",
