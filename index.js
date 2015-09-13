@@ -16,7 +16,7 @@ module.exports = {
             cache = {};
         }
     },
-    process: function(data, support) {
+    process: function(data, opts) {
 
         var result = {
             html: '<!-- Unable to resolve HTML include-->'
@@ -30,7 +30,7 @@ module.exports = {
 
         //read from fs
         if(data && data.file) {
-            var filePath = path.resolve(support.basePath, data.file);
+            var filePath = path.resolve(pagespace.userBasePath, data.file);
             var promise = readFileAsync(filePath, 'utf8');
             return promise.then(function(val) {
                 cache[data.file] = val;
@@ -87,10 +87,5 @@ module.exports = {
                 html: '<!-- Nothing to include -->'
             });
         }
-
-
-    },
-    defaultData: {
-        html: '<p>I am an HTML include</p>'
     }
 };
