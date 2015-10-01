@@ -19,15 +19,13 @@
     "express-handlebars": "^2.0.1",
     "serve-favicon": "^2.3.0"
   },
-  "peerDependencies": {
-    "pagespace": "0.x"
-  },
   "dependencies": {
     "bluebird": "^2.9.34"
   },
   "pagespace" : {
+      "name" : "HTML",
       "defaultData": {
-          "html": "<p>I am an HTML include</p>"
+          "html": "<p>HTML include</p>"
       }
   }
 }
