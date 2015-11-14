@@ -16,24 +16,24 @@ module.exports = {
             cache = {};
         }
     },
-    process: function(data, opts) {
+    process: function(config) {
 
         var result = {
             html: '<!-- Unable to resolve HTML include-->'
         };
 
         //read from cache
-        if(data && ((data.url && cache[data.url]) || (data.file && cache[data.file]))) {
-            result.html = cache[data.url] || cache[data.file];
+        if(config && ((config.url && cache[config.url]) || (config.file && cache[config.file]))) {
+            result.html = cache[config.url] || cache[config.file];
             return Promise.resolve(result);
         }
 
         //read from fs
-        if(data && data.file) {
-            var filePath = path.resolve(pagespace.userBasePath, data.file);
+        if(config && config.file) {
+            var filePath = path.resolve(pagespace.userBasePath, config.file);
             var promise = readFileAsync(filePath, 'utf8');
             return promise.then(function(val) {
-                cache[data.file] = val;
+                cache[config.file] = val;
                 result.html = val;
                 return Promise.resolve(result);
             }).catch(function() {
@@ -42,8 +42,8 @@ module.exports = {
         }
 
         //read from url
-        else if(data && data.url) {
-            var urlParts = url.parse(data.url);
+        else if(config && config.url) {
+            var urlParts = url.parse(config.url);
             var requestOpts = {
                 hostname: urlParts.hostname,
                 port: urlParts.port,
@@ -60,7 +60,7 @@ module.exports = {
                     });
 
                     res.on('end', function() {
-                        cache[data.url] = body;
+                        cache[config.url] = body;
                         result.html = body;
                         resolve(result);
                     });
@@ -76,8 +76,8 @@ module.exports = {
             });
 
         //read raw html
-        } else if(data && data.html) {
-            result.html = data.html;
+        } else if(config && config.html) {
+            result.html = config.html;
             return Promise.resolve(result);
         }
 

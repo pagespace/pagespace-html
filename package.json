@@ -24,7 +24,7 @@
   },
   "pagespace" : {
       "name" : "HTML",
-      "defaultData": {
+      "config": {
           "html": "<p>HTML include</p>"
       }
   }
