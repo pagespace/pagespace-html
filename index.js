@@ -9,6 +9,7 @@ var readFileAsync = Promise.promisify(fs.readFile)
 var cache = {};
 
 module.exports = {
+    /*
     reset: function(key) {
         if(key) {
             delete cache[key];
@@ -87,5 +88,5 @@ module.exports = {
                 html: '<!-- Nothing to include -->'
             });
         }
-    }
+    }*/
 };
