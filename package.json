@@ -13,6 +13,7 @@
   },
   "author": "Phil Mander",
   "license": "MIT",
+  "keywords" : [ "pagespace-plugin" ],
   "devDependencies": {
     "body-parser": "^1.13.3",
     "express": "^4.13.3",
@@ -23,9 +24,11 @@
     "bluebird": "^2.9.34"
   },
   "pagespace" : {
-      "name" : "HTML",
-      "config": {
-          "html": "<p>HTML include</p>"
-      }
+      "schema" : [{
+          "name" : "html",
+          "title" : "HTML",
+          "type" : "string",
+          "default" : "HTML Include"
+      }]
   }
 }
