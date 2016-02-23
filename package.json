@@ -1,7 +1,7 @@
 {
   "name": "pagespace-html",
-  "version": "1.0.2",
-  "description": "HTNL plugin for Pagespace",
+  "version": "0.1.0",
+  "description": "HTML plugin for Pagespace",
     "repository": {
         "type": "git",
         "url": "https://github.com/pagespace/pagespace-html"
@@ -24,11 +24,16 @@
     "bluebird": "^2.9.34"
   },
   "pagespace" : {
-      "schema" : [{
-          "name" : "html",
-          "title" : "HTML",
-          "type" : "string",
-          "default" : "HTML Include"
-      }]
+      "schema" : {
+          "type": "object",
+          "title": "HTML Embed",
+          "properties": {
+              "html":  {
+                  "title": "HTML",
+                  "type": "string"
+              }
+          },
+          "required": []
+      }
   }
 }
