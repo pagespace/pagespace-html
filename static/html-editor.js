@@ -11,9 +11,7 @@
         };
 
         $scope.data = {
-            html: '',
-            file: '',
-            url: ''
+            html: ''
         };
 
         localforage.getItem(STORAGE_KEY).then(function(htmlDraftData) {
