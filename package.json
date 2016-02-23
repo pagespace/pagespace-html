@@ -1,7 +1,7 @@
 {
   "name": "pagespace-html",
-  "version": "1.0.2",
-  "description": "HTNL plugin for Pagespace",
+  "version": "0.1.0",
+  "description": "HTML plugin for Pagespace",
     "repository": {
         "type": "git",
         "url": "https://github.com/pagespace/pagespace-html"
@@ -13,6 +13,7 @@
   },
   "author": "Phil Mander",
   "license": "MIT",
+  "keywords" : [ "pagespace-plugin" ],
   "devDependencies": {
     "body-parser": "^1.13.3",
     "express": "^4.13.3",
@@ -23,9 +24,16 @@
     "bluebird": "^2.9.34"
   },
   "pagespace" : {
-      "name" : "HTML",
-      "config": {
-          "html": "<p>HTML include</p>"
+      "schema" : {
+          "type": "object",
+          "title": "HTML Embed",
+          "properties": {
+              "html":  {
+                  "title": "HTML",
+                  "type": "string"
+              }
+          },
+          "required": []
       }
   }
 }

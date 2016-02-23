@@ -21,27 +21,13 @@
         <div class="col-sm-12">
             <form>
                 <div class="form-group">
-                    <label for="file">File path of an HTML document</label>
-                    <input type="text" id="file" class="form-control" placeholder="./html-includes/foo.html" ng-model="data.file">
-                    <p class="help-block"><small>Paths should be absolute or relative to where Pagespace is running</small></p>
-                </div>
-
-                <div class="form-group">
-                    <label for="url">URL of an HTML document</label>
-                    <input type="text" id="url" class="form-control" placeholder="/_media/foo.html" ng-model="data.url">
-                    <p class="help-block"><small><b>Tip:</b> Reference an HTML document uploaded as media</small></p>
-                </div>
-
-
-                <div class="form-group">
-                    <label for="html">Directly enter HTML</label>
+                    <label for="html">HTML code</label>
                     <textarea ng-model="data.html"
                               id="html"
                               ui-codemirror
                               ui-codemirror-opts="editorOpts"
                               class="form-control"
                               placeholder="&lt;p&gt;Hello world&lt;/p&gt;"></textarea>
-                    <p class="help-block"><small>This field has precedence over a file path and url entry.</small></p>
                 </div>
             </form>
         </div>
