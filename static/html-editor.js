@@ -23,14 +23,14 @@
             $scope.$apply();
         });
 
-        $scope.save = function() {
+        pagespace.on('save', function() {
             return pagespace.setData($scope.data).then(function() {
                 //remove draft
                 return localforage.removeItem(STORAGE_KEY);
             }).then(function() {
                 pagespace.close();
             });
-        };
+        });
 
         $scope.saveDraft = function() {
             return localforage.setItem(STORAGE_KEY, $scope.data);
