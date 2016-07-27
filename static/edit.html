@@ -5,7 +5,37 @@
 
     <link rel="stylesheet" type="text/css" href="/_static/plugins/pagespace-html/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/_static/plugins/pagespace-html/bower_components/codemirror/lib/codemirror.css">
-    <link href="/_static/plugins/pagespace-html/styles.css" type="text/css" rel="stylesheet">
+
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ECECEC;
+        }
+
+        /* layout */
+        .main {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            overflow: auto;
+            padding: 28px 0;
+        }
+
+        .CodeMirror {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            height: auto;
+        }
+    </style>
+
 
     <script src="/_static/plugins/pagespace-html/pagespace-stub.js"></script>
     <script src="/_static/plugins/pagespace-html/bower_components/localforage/dist/localforage.min.js"></script>
@@ -33,10 +63,6 @@
         </div>
     </main>
 </div>
-
-<footer class="footer">
-    <button type="button" class="btn btn-primary" ng-click="save()">Save and close</button>
-</footer>
 
 </body>
 
