@@ -30,6 +30,7 @@
           "properties": {
               "html":  {
                   "title": "HTML",
+                  "default" : "<p>New HTML include</p>",
                   "type": "string"
               }
           },
